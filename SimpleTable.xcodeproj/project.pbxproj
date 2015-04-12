@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC6E19A01AD7C5CC00A6B532 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6E199F1AD7C5CC00A6B532 /* MainViewController.swift */; };
 		CCAD59AD1AD782690023D268 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAD59AC1AD782690023D268 /* AppDelegate.swift */; };
-		CCAD59AF1AD782690023D268 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCAD59AE1AD782690023D268 /* ViewController.swift */; };
 		CCAD59B21AD782690023D268 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCAD59B01AD782690023D268 /* Main.storyboard */; };
 		CCAD59B41AD782690023D268 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCAD59B31AD782690023D268 /* Images.xcassets */; };
 		CCAD59B71AD782690023D268 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCAD59B51AD782690023D268 /* LaunchScreen.xib */; };
@@ -26,10 +26,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CC6E199F1AD7C5CC00A6B532 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CCAD59A71AD782690023D268 /* SimpleTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCAD59AB1AD782690023D268 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CCAD59AC1AD782690023D268 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CCAD59AE1AD782690023D268 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CCAD59B11AD782690023D268 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CCAD59B31AD782690023D268 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CCAD59B61AD782690023D268 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -78,11 +78,11 @@
 			isa = PBXGroup;
 			children = (
 				CCAD59AC1AD782690023D268 /* AppDelegate.swift */,
-				CCAD59AE1AD782690023D268 /* ViewController.swift */,
 				CCAD59B01AD782690023D268 /* Main.storyboard */,
 				CCAD59B31AD782690023D268 /* Images.xcassets */,
 				CCAD59B51AD782690023D268 /* LaunchScreen.xib */,
 				CCAD59AA1AD782690023D268 /* Supporting Files */,
+				CC6E199F1AD7C5CC00A6B532 /* MainViewController.swift */,
 			);
 			path = SimpleTable;
 			sourceTree = "<group>";
@@ -212,7 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCAD59AF1AD782690023D268 /* ViewController.swift in Sources */,
+				CC6E19A01AD7C5CC00A6B532 /* MainViewController.swift in Sources */,
 				CCAD59AD1AD782690023D268 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,6 +411,7 @@
 				CCAD59C81AD782690023D268 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CCAD59C91AD782690023D268 /* Build configuration list for PBXNativeTarget "SimpleTableTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +420,7 @@
 				CCAD59CB1AD782690023D268 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,25 +1,58 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7528.3" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="u9P-Dd-QGe">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7518.3"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Main View Controller-->
+        <scene sceneID="BI7-Vv-r8K">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="u9P-Dd-QGe" customClass="MainViewController" customModule="SimpleTable" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="f0p-Qt-HFt"/>
+                        <viewControllerLayoutGuide type="bottom" id="6Gs-or-2au"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="Unq-VX-ouO">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cuq-Dj-1ju">
+                                <rect key="frame" x="16" y="28" width="568" height="30"/>
+                                <state key="normal" title="Which style?">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="u9P-Dd-QGe" eventType="touchUpInside" id="WYB-CA-P7e"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="oOk-iZ-TWS">
+                                <rect key="frame" x="16" y="66" width="568" height="514"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="u9P-Dd-QGe" id="3Fy-eT-rrW"/>
+                                    <outlet property="delegate" destination="u9P-Dd-QGe" id="yiu-ox-t4Q"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cuq-Dj-1ju" firstAttribute="trailing" secondItem="Unq-VX-ouO" secondAttribute="trailingMargin" id="AWs-y4-suY"/>
+                            <constraint firstItem="cuq-Dj-1ju" firstAttribute="top" secondItem="f0p-Qt-HFt" secondAttribute="bottom" constant="8" symbolic="YES" id="TxR-oa-bgW"/>
+                            <constraint firstItem="oOk-iZ-TWS" firstAttribute="leading" secondItem="cuq-Dj-1ju" secondAttribute="leading" id="UUB-yX-vgK"/>
+                            <constraint firstAttribute="bottom" secondItem="oOk-iZ-TWS" secondAttribute="bottom" constant="20" symbolic="YES" id="WY7-B9-5hP"/>
+                            <constraint firstItem="oOk-iZ-TWS" firstAttribute="trailing" secondItem="cuq-Dj-1ju" secondAttribute="trailing" id="gbZ-fN-A0G"/>
+                            <constraint firstItem="cuq-Dj-1ju" firstAttribute="leading" secondItem="Unq-VX-ouO" secondAttribute="leadingMargin" id="mDG-Cy-SFL"/>
+                            <constraint firstItem="oOk-iZ-TWS" firstAttribute="top" secondItem="cuq-Dj-1ju" secondAttribute="bottom" constant="8" symbolic="YES" id="xYd-kR-sbT"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="oOk-iZ-TWS" id="Yqf-10-xJk"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkw-6U-6j4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="884" y="395"/>
         </scene>
     </scenes>
 </document>

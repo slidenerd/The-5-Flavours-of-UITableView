@@ -96,7 +96,7 @@ class MainViewController: UIViewController ,  UITableViewDelegate, UITableViewDa
             return nil;
         }
 //        else if (indexPath.row % 2 == 0){
-//            //change the selection made by the user, its highly unlikely that you need to do this but in our case , if the user selects an item at an even position, we change it to an odd one and so on.
+//            //change the selection made by the user, its highly unlikely that you need to do this but in our case , if the user selects an item at an even position, we change it to an odd one and so on. use this with caution
 //            return NSIndexPath(forRow: indexPath.row + 1, inSection: indexPath.section)
 //        }
         else{

@@ -65,7 +65,8 @@ class MainViewController: UIViewController ,  UITableViewDelegate, UITableViewDa
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        // we can tell the table that all of its rows should have a given, fixed height. To do that, we set its rowHeight property
+//        tableView.rowHeight = 100
         // Do any additional setup after loading the view.
     }
 
@@ -78,6 +79,41 @@ class MainViewController: UIViewController ,  UITableViewDelegate, UITableViewDa
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dwarves.count;
+    }
+    
+    /**
+    This method sets the indent level for each row based on its row number; so row 0 will have an indent level of 0, row 1 will have an indent level of 1, and so on.
+    **/
+//    func tableView(tableView: UITableView, indentationLevelForRowAtIndexPath indexPath: NSIndexPath) -> Int {
+//        return indexPath.row%4;
+//    }
+    
+    /**
+    This method is passed an indexPath that represents the item that’s about to be selected. Our code looks at which row is about to be selected and if it’s the first row, which is always index zero, then it returns nil, which indicates that no row should actually be selected. Otherwise, it returns the unmodified indexPath, which is how we indicate that it’s OK for the selection to proceed.
+    **/
+    func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
+        if indexPath.row == 0 {
+            return nil;
+        }
+//        else if (indexPath.row % 2 == 0){
+//            //change the selection made by the user, its highly unlikely that you need to do this but in our case , if the user selects an item at an even position, we change it to an odd one and so on.
+//            return NSIndexPath(forRow: indexPath.row + 1, inSection: indexPath.section)
+//        }
+        else{
+            return indexPath;
+        }
+    }
+    
+    /**
+    Triggered when the user hits select on one of the rows of the UITableView and selects an item
+    **/
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let rowValue = dwarves [indexPath.row];
+        let message = "hey, guess what , you selected \(rowValue)";
+        let controller = UIAlertController(title: "Row Selected", message: message, preferredStyle: UIAlertControllerStyle.Alert);
+        let action = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil);
+        controller.addAction(action);
+        presentViewController(controller, animated: true, completion: nil);
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -108,6 +144,7 @@ class MainViewController: UIViewController ,  UITableViewDelegate, UITableViewDa
         }
         //regardless of the chosen style, we ll always need a primary label :)
          cell!.textLabel?.text = dwarves[indexPath.row]
+//        cell!.textLabel!.font = UIFont.boldSystemFontOfSize(20)
         //Notice this is not an implicitly unwrapped optional, talking about how are have accessed the detailedTextLabel, the reason? pretty simple, if this was implicity unwrapped, its not available in certain styles such as Default, the app would crash in the Default style if you tried to access this value by implicitly unwrapping it
         cell?.detailTextLabel?.text = "I am at row number \(indexPath.row)";
         return cell!;
@@ -132,6 +169,23 @@ class MainViewController: UIViewController ,  UITableViewDelegate, UITableViewDa
             //set the secondary text for the tableview using the detailTextLabel property , by default the secondary text comes right below the primary heading
         }
         cell?.imageView?.image = image;
+    }
+    
+    /**
+    If you need different rows to have different heights, you can implement the UITableViewDelegate’s tableView(_, heightForRowAtIndexPath:) method
+    **/
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        //for all even rows, let the row height be 80 points and for the rest let it be 40 points
+        switch (indexPath.row % 4) {
+        case 0:
+            return 40;
+        case 1:
+            return 50;
+        case 2:
+            return 60;
+    default:
+            return 70;
+        }
     }
     /*
     // MARK: - Navigation

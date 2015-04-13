@@ -14,3 +14,5 @@
 ![testgif](https://cloud.githubusercontent.com/assets/5139030/7113955/78ee0e58-e1f6-11e4-8a1c-6d7801ff118c.gif)
 <h1>Different row heights for each row</h1>
 ![testgif](https://cloud.githubusercontent.com/assets/5139030/7114414/aed79148-e1fa-11e4-8a7c-87ba8d09bc5f.gif)
+<h1>Make some rows non-selectable</h1>
+![testgif](https://cloud.githubusercontent.com/assets/5139030/7114453/12b4098a-e1fb-11e4-8a87-e9dd3177a663.gif)
